@@ -106,7 +106,7 @@ main();
     max_tokens: 4096,
     }).then((chatCompletion)=>{
     const mdContent = chatCompletion.choices[0]?.message?.content;
-    const outputFilePath = "prompt_" + new Date().toISOString().replace(/[-:TZ]/g, "") + ".md";
+    const outputFilePath = "model_" + new Date().toISOString().replace(/[-:TZ]/g, "") + ".md";
     fs.writeFileSync(outputFilePath, mdContent);
     console.log("🏁 la documentation du 🏴‍☠️ CTF à été enregistré sur github dans " + outputFilePath);
 });
