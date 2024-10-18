@@ -3,6 +3,7 @@ const path = require('path');
 const express = require('express');
 const Groq = require('groq-sdk');
 
+
 // Créer l'application Express
 const server = express();
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
@@ -32,9 +33,8 @@ server.post('/generate', async (req, res) => {
 
 // Lancer le serveur Express
 server.listen(4443, () => {
-  console.log('Serveur Express démarré sur http://localhost:4433');
+  console.log('Serveur Express démarré sur http://localhost:4443');
 });
-
 function createWindow() {
   const win = new BrowserWindow({
     width: 987,
@@ -45,10 +45,9 @@ function createWindow() {
       enableRemoteModule: false,
     },
   });
-
   win.loadFile('index.html');
 }
-
+// Démarrage d'Electron
 app.whenReady().then(createWindow);
 
 app.on('window-all-closed', () => {
